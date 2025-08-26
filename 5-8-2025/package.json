@@ -1,0 +1,14 @@
+{
+  "name": "5-8-2025",
+  "version": "1.0.0",
+  "main": "Project.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Project.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

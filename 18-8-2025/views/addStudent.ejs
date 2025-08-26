@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="font-sans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Join Our Professional Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --background: oklch(0.97 0.013 162.4);
+            --foreground: oklch(0.478 0.015 252.37);
+            --card: oklch(1 0 0);
+            --card-foreground: oklch(0.478 0.015 252.37);
+            --primary: oklch(0.506 0.177 162.015);
+            --primary-foreground: oklch(1 0 0);
+            --secondary: oklch(0.584 0.148 162.015);
+            --muted-foreground: oklch(0.478 0.015 252.37);
+            --accent: oklch(0.584 0.148 162.015);
+            --border: oklch(0.898 0.013 252.37);
+            --input: oklch(1 0 0);
+            --ring: oklch(0.584 0.148 162.015 / 0.5);
+            --radius: 0.5rem;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--foreground);
+            font-family: 'Geist Sans', system-ui, -apple-system, sans-serif;
+        }
+
+        .card {
+            background: var(--card);
+            color: var(--card-foreground);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            border-radius: var(--radius);
+        }
+
+        .btn-primary:hover {
+            background: oklch(0.456 0.177 162.015);
+        }
+
+        .input-field {
+            background: var(--input);
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) - 2px);
+        }
+
+        .input-field:focus {
+            outline: 2px solid var(--ring);
+            outline-offset: 2px;
+            border-color: var(--accent);
+        }
+
+        .text-muted {
+            color: var(--muted-foreground);
+        }
+
+        .gradient-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <%- include('./Base/header') %>
+
+        <!-- Header Section -->
+
+    
+
+        <!-- Main Content -->
+        <main class="flex-1 flex items-center justify-center px-6 py-12">
+            <div class="w-full max-w-md">
+                <!-- Registration Form Card -->
+                <div class="card shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Add Student</h2>
+                        <p class="text-muted text-sm">Get started </p>
+                    </div>
+
+                    <form action="/student/addStudent" method="POST" class="space-y-6">
+
+                        <!-- Roll Number -->
+                        <div>
+                            <label for="rollNo" class="block text-sm font-medium text-gray-700 mb-2">
+                                Roll Number
+                            </label>
+                            <input type="text" id="rollNo" name="rollNo" required
+                                class="input-field w-full px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors duration-200"
+                                placeholder="Enter Roll Number">
+                        </div>
+
+                        <!-- Student Name -->
+                        <div>
+                            <label for="studentName" class="block text-sm font-medium text-gray-700 mb-2">
+                                Student Name
+                            </label>
+                            <input type="text" id="studentName" name="studentName" required
+                                class="input-field w-full px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors duration-200"
+                                placeholder="Enter Student Name">
+                        </div>
+
+                        <!-- Father's Name -->
+                        <div>
+                            <label for="fatherName" class="block text-sm font-medium text-gray-700 mb-2">
+                                Father's Name
+                            </label>
+                            <input type="text" id="fatherName" name="fatherName" required
+                                class="input-field w-full px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors duration-200"
+                                placeholder="Enter Father's Name">
+                        </div>
+
+                        <!-- Course -->
+                        <div>
+                            <label for="course" class="block text-sm font-medium text-gray-700 mb-2">
+                                Course
+                            </label>
+                            <input type="text" id="course" name="course" required
+                                class="input-field w-full px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors duration-200"
+                                placeholder="Enter Course">
+                        </div>
+
+                        <!-- Branch -->
+                        <div>
+                            <label for="branch" class="block text-sm font-medium text-gray-700 mb-2">
+                                Branch
+                            </label>
+                            <select id="branch" name="branch" required
+                                class="input-field w-full px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors duration-200">
+                                <option value="" disabled selected>Select Branch</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="it">Information Technology</option>
+                                <option value="ece">Electronics & Communication</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="civil">Civil</option>
+                            </select>
+                        </div>
+
+                        <!-- Year of Admission -->
+                        <div>
+                            <label for="yearOfAdmission" class="block text-sm font-medium text-gray-700 mb-2">
+                                Year of Admission
+                            </label>
+                            <input type="text" id="yearOfAdmission" name="yearOfAdmission" required
+                                class="input-field w-full px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors duration-200"
+                                placeholder="Enter Year (e.g. 2023)">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="btn-primary w-full py-3 px-4 font-semibold text-white transition-colors duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+                            Add Student
+                        </button>
+                    </form>
+
+
+
+                </div>
+
+
+            </div>
+        </main>
+
+
+        <%- include('./Base/footer') %>
+
+
+            <script>
+                // Form validation
+                document.querySelector('form').addEventListener('submit', function (e) {
+                    const password = document.getElementById('password').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+
+                    if (password !== confirmPassword) {
+                        e.preventDefault();
+                        alert('Passwords do not match. Please try again.');
+                        return false;
+                    }
+
+                    if (password.length < 8) {
+                        e.preventDefault();
+                        alert('Password must be at least 8 characters long.');
+                        return false;
+                    }
+                });
+
+                // Enhanced focus states
+                document.querySelectorAll('.input-field').forEach(input => {
+                    input.addEventListener('focus', function () {
+                        this.parentElement.classList.add('focused');
+                    });
+
+                    input.addEventListener('blur', function () {
+                        this.parentElement.classList.remove('focused');
+                    });
+                });
+            </script>
+</body>
+
+</html>

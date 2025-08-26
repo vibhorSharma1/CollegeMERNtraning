@@ -1,0 +1,37 @@
+[
+    {
+        "RollNumber": 1,
+        "firstName": "Aman",
+        "lastName": "Kumari",
+        "email": "vmacvagh0@opensource.org",
+        "gender": "Female"
+    },
+    {
+        "RollNumber": 2,
+        "firstName": "Mohit",
+        "lastName": "Sherr",
+        "email": "tsends1@ebay.com",
+        "gender": "Female"
+    },
+    {
+        "RollNumber": 3,
+        "firstName": "Aryan",
+        "lastName": "Shuwarrrr",
+        "email": "fgoldenofireland2@wp.com",
+        "gender": "Female"
+    },
+    {
+        "RollNumber": 4,
+        "firstName": "Omegaa",
+        "lastName": "PA",
+        "email": "amobberley3@hostgator.com",
+        "gender": "Non-binary"
+    },
+    {
+        "RollNumber": 5,
+        "firstName": "Rohit",
+        "lastName": "Sharma",
+        "email": "sbittlestone4@ox.ac.uk",
+        "gender": "Female"
+    }
+]
