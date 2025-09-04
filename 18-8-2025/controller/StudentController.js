@@ -1,17 +1,26 @@
 const Student = require('../models/Student');
-
+const clodinary = require('cloudinary').v2;
 
 async function addStudent(req, res) {
     try {
         console.log('Adding Student:', req.body);
-        let student = new Student(req.body);
+        console.log('Uploaded file:', req.file);
+
+        let studentData = {
+            ...req.body,
+            studentImage: req.file ? req.file.filename : null  // yahan file ka naam/path save karo
+        };
+
+        let student = new Student(studentData);
         await student.save();
+
         res.redirect("/user/dashboard");
     } catch (error) {
         console.error("❌ Error adding Student:", error);
         res.status(500).send('Error adding student');
     }
 }
+
 
 const deleteStudent = async (req, res) => {
   try {

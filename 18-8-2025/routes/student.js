@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Student = require('../models/Student');
+const multer = require('multer');
+const upload=multer({
+    storage:multer.diskStorage({}),
+    limits:{fileSize: 10* 1024 * 1024},
+});
 
 
 const studentController = require('../controller/StudentController');
@@ -10,7 +15,7 @@ router.get("/addStudent", (req, res) => {
 });
 
 
-router.post("/addstudent", (req, res) => {
+router.post("/addstudent",upload.single('studentImage') ,(req, res) => {
     console.log("Adding Student:", req.body);
     studentController.addStudent(req, res);    
 });
