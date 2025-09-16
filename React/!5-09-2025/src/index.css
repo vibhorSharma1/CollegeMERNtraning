@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Optional: Apni custom theme via CSS variables */
+@theme {
+  --color-bg-base: #ffffff;
+  --color-text-base: #16181d;
+}
+@layer theme {
+  .dark {
+    --color-bg-base: #18181b;
+    --color-text-base: #f4f4f5;
+  }
+}
