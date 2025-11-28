@@ -12,9 +12,8 @@ function Home() {
             </Col>
         </Row>
         <Row>
-          <Col>
+          
             <MyCards></MyCards>
-          </Col>
         </Row>
     </Container>
   )

@@ -44,10 +44,10 @@ function MyCards() {
     return (
         <>
             <Container>
-                <Row>
+                <Row className="grid grid-cols-3 gap-4 items-stretch">
                     {
                         books.map((book)=>
-                            <Col><CardDemo  book={book} /></Col>)
+                            <Col ><CardDemo  book={book} /></Col>)
                     }
                 </Row>
             </Container>

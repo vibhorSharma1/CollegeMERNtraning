@@ -1,19 +1,45 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import React, { useState } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
-function CardDemo({ book }) {
+function BookCard({ book }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const previewText = book.Description.slice(0, 100);
+
   return (
-    <Card style={{ width: '14rem' }} className="shadow-lg m-3 rounded-lg overflow-hidden">
-      <Card.Img variant="top" src={book.imgAdd} style={{height:'300px' ,objectFit:'cover'}} alt={book.Name} />
-      <Card.Body>
+    <Card className="h-full flex flex-col shadow-md">
+      <Card.Img
+        variant="top"
+        src={book.imgAdd}
+        className="h-[250px] w-full object-cover"
+        alt={book.Name}
+      />
+      <Card.Body className="flex flex-col flex-grow">
         <Card.Title className="text-lg font-bold">{book.Name}</Card.Title>
-        <Card.Text className="text-sm text-gray-600">
-          {book.Description}
+
+        <Card.Text className="flex-grow">
+          {isExpanded
+            ? book.Description
+            : previewText + (book.Description.length > 100 ? "..." : "")}
         </Card.Text>
-        <Button variant="primary">Purchase</Button>
+
+        {book.Description.length > 100 && (
+          <Button
+            variant="link"
+            className="p-0 text-blue-600 hover:underline self-start"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+          </Button>
+        )}
+
+        <Button variant="primary" className="mt-2 self-start">
+          Purchase
+        </Button>
       </Card.Body>
     </Card>
   );
 }
 
-export default CardDemo;
+export default BookCard;
